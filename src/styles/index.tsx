@@ -37,7 +37,7 @@ export const Button = styled.button`
 
 `;
 
-export const Button2 = styled.button`
+export const Button2 = styled.button` 
   font-size: 32px;
   width: 500px;
   height: 100px;
