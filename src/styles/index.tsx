@@ -55,18 +55,22 @@ export const Button2 = styled.button`
 
 `;
 
-
-
-/* export const Button3 = styled(Link)`
-  padding: 12px;
-  border: 0;
-  background: #FFEA34;
+export const Button3 = styled.button`
+  font-size: 16px;
+  color: #fff;
+  width: 80px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #000;
+  margin: 10px;
   
 
   &:hover {
-    opacity: 0.5;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 22px;
   }
 
-`;  */
+`;
 
-//git push origin lorena
