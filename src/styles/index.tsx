@@ -74,3 +74,31 @@ export const Button3 = styled.button`
 
 `;
 
+export const NavBarArea = styled.div`
+  
+  nav{
+    background: #000 !important;
+  };
+  .inicio{
+    color: #FFEA34 !important;
+  }
+  .drop a{
+    color: #FFEA34 !important;
+  }
+  #basic-navbar-nav div{
+    /* display: flex !important;
+    justify-content: right !important; */
+    margin: 0 0 0 auto !important;
+    
+  }
+  
+`;
+
+export const DropFull = styled.div`
+  .dropBack{
+    background: #000 !important;
+  }
+  
+  
+  
+`;
