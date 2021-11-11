@@ -1,0 +1,36 @@
+.pro-menu-item {
+  list-style-type: none;
+  font-size: 24px;
+  width: 250px;
+  height: 100%;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #dedede;
+}
+
+.pro-menu-item a {
+  text-decoration: none;
+  color: #707070;
+}
+
+.pro-menu-item svg {
+  color: #000;
+}
+
+.pro-sidebar {
+  height: 100%;
+}
+
+.pro-sub-menu {
+  color: #707070;
+}
+
+.pro-sub-menu li {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.pro-sidebar-footer {
+  cursor: pointer;
+}

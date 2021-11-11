@@ -11,7 +11,7 @@ import { AiOutlineUserSwitch } from "react-icons/ai";
 /* import Modal from 'react-modal';
 import ModalDialog from 'react-bootstrap/ModalDialog';  */
 
-export const Test = () => {
+export const Test: React.FC = () => {
   return (
     <>
       <NavBarArea>
