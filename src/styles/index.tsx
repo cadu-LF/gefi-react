@@ -86,8 +86,6 @@ export const NavBarArea = styled.div`
     color: #FFEA34 !important;
   }
   #basic-navbar-nav div{
-    /* display: flex !important;
-    justify-content: right !important; */
     margin: 0 0 0 auto !important;
     
   }
