@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from '../styles'
 import {Button2} from '../styles'
 
-export const Test = () => {
+export const Test: React.FC = () => {
   return (
     <>
       <h1>Página para testes dos componentes</h1>

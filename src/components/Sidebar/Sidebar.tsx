@@ -83,6 +83,12 @@ export const Sidebar = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
+                <Link to='/cadastrar-responsavel'>
+                  <BsFillPersonPlusFill />
+                  <span>Cadastrar Responsável</span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
                 <Link to='/visualizar-cadastro'>
                   <CgNotes />
                   <span>Visualizar Cadastros</span>
@@ -114,7 +120,7 @@ export const Sidebar = () => {
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/visualizar-mensalidade'>
+                    <Link to='/visualizar-mensalidades'>
                       <AiFillFileMarkdown />
                       <span>Vizualizar Vencimento das mensalidades</span>
                     </Link>
