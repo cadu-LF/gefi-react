@@ -2,7 +2,7 @@ import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, SubMenu, Menu
 
 import { RiTestTubeFill } from 'react-icons/ri';
 import {GoThreeBars} from 'react-icons/go';
-import { BsCurrencyDollar, BsFillPersonPlusFill } from 'react-icons/bs';
+import { BsBagPlus, BsCurrencyDollar, BsFillPersonPlusFill } from 'react-icons/bs';
 import {CgNotes} from 'react-icons/cg';
 import { IoIosCart } from 'react-icons/io';
 import { BiShoppingBag, BiGitRepoForked } from 'react-icons/bi';
@@ -80,6 +80,12 @@ export const Sidebar = () => {
                 <Link to='/cadastrar-membro'>
                   <BsFillPersonPlusFill />
                   <span>Cadastrar Membro</span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/cadastrar-produto'>
+                  <BsBagPlus />
+                  <span>Cadastrar Produto</span>
                 </Link>
               </MenuItem>
               <MenuItem>

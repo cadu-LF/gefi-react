@@ -1,7 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const CadastrarCompra: React.FC = () => {
+  const [membros, setMembros] = useState([{id: 1, nome: 'Tim'}]);
+  const [produtos, setProdutos] = useState([{id: 1, descricao: 'caixa', qtde: 15}]);
+
   return(
-    <h1>Cadastrar Compra</h1>
+    <>
+      <h1>Cadastrar Compra</h1>
+      <form>
+        <label>Membro Comprador</label>
+        <select placeholder="Selecione um membro">
+          {
+            membros.map( (membro) => {
+              <option value={membro.id}>{membro.nome}</option>
+            })
+          }
+        </select><br />
+        <label>Produtos</label>
+        <select placeholder="Selecione um produto">
+          {
+            produtos.map( (produto) => {
+              <option value={produto.id}>{produto.descricao}</option>
+            })
+          }
+        </select><br />
+        <label>Quantidade</label>
+        <input type="range" min='1' max='15'/>
+        <button type="submit">Registrar Compra</button>
+      </form>
+    </>
   )
 }
