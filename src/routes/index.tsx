@@ -6,6 +6,7 @@ import { CadastrarCompra } from '../pages/CadastrarCompra';
 import { CadastrarMembro } from '../pages/CadastrarMembro';
 import { CadastrarProduto } from '../pages/CadastrarProduto';
 import { CadastrarResponsavel } from '../pages/CadastrarResponsavel';
+import { CadastrarTipoProduto } from '../pages/CadastrarTipoProduto';
 import { Nova } from '../pages/Nova';
 import { Test } from '../pages/Test';
 import { Visualizar } from '../pages/Visualizar';
@@ -29,6 +30,7 @@ export const Routes: React.FC = () => {
         <Route component={VisualizarCadastro} path='/visualizar-cadastro' exact />
         <Route component={VisualizarRegistro} path='/visualizar-registro' exact />
         <Route component={CadastrarResponsavel} path='/cadastrar-responsavel' exact />
+        <Route component={CadastrarTipoProduto} path='/cadastrar-tipo-produto' exact />
         <Route component={VisualizarMensalidades} path='/visualizar-mensalidades' exact />
       </Switch>
     </>

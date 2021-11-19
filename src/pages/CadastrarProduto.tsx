@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form } from '../styles';
 
 export const CadastrarProduto: React.FC = () => {
   const [tipos, setTipos] = useState([{id: 1, descricao: 'caixa'}]);
@@ -6,7 +7,7 @@ export const CadastrarProduto: React.FC = () => {
   return(
     <>
       <h1>Cadastrar Produto</h1>
-      <form>
+      <Form>
         <label>Produto</label>
         <input type="text" /><br />
         <label>Valor Unitário</label>
@@ -20,7 +21,7 @@ export const CadastrarProduto: React.FC = () => {
           }
         </select>
         <button type='submit'>Cadastrar</button>
-      </form>
+      </Form>
     </>
   )
 }

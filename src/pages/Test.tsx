@@ -14,7 +14,7 @@ import ModalDialog from 'react-bootstrap/ModalDialog';  */
 export const Test: React.FC = () => {
   return (
     <>
-      <NavBarArea>
+      {/* <NavBarArea>
         <Navbar bg="dark" expand="lg">
           <Container>
             <Navbar.Brand href="#home" className="inicio">
@@ -48,7 +48,7 @@ export const Test: React.FC = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </NavBarArea>
+      </NavBarArea> */}
 
       <h1>Página para testes dos componentes</h1>
       <Button>Entrar</Button>
