@@ -75,9 +75,11 @@ export const Button3 = styled.button`
 `;
 
 export const NavBarArea = styled.div`
-  
+  display: flex;
+
   nav{
     background: #000 !important;
+    width: 100% !important;
   };
   .inicio{
     color: #FFEA34 !important;
