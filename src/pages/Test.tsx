@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Button2, TabelaVencimentoRegistro, TabelaVencimentoMensalidade, TabelaCompras, TabelaCadastro, Form} from "../styles";
+import { Button, Button2, Form, Table} from "../styles";
 import Navbar from "react-bootstrap/Navbar";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 import { NavBarArea } from "../styles";
@@ -137,7 +137,7 @@ export const Test: React.FC = () => {
     
 
 
-      <TabelaVencimentoRegistro>
+      <Table>
         <thead>
           <tr>
             <th> Número Registro </th>
@@ -152,65 +152,7 @@ export const Test: React.FC = () => {
         <tbody>
           <h4>Tabela Vencimento Registro</h4>
         </tbody>
-      </TabelaVencimentoRegistro>
-
-      <TabelaVencimentoMensalidade>
-        <thead>
-          <tr>
-            <th> Número Registro </th>
-            <th> Nome Membro </th>
-            <th> Email Responsável </th>
-            <th> Tel. Resposável </th>
-            <th> Nome Responsável </th>
-            <th> Vencimento Registro </th>
-            <th> Vencimento Mensalidade </th>
-          </tr>
-        </thead>
-        <tbody>
-          <h4>Tabela Vencimento Mensalidade</h4>
-        </tbody>
-      </TabelaVencimentoMensalidade>
-
-      <TabelaCadastro>
-        <thead>
-          <tr>
-            <th> Número Registro </th>
-            <th> Nome Membro </th>
-            <th> Email Responsável </th>
-            <th> Tel. Resposável </th>
-            <th> Nome Responsável </th>
-            <th> Vencimento Registro </th>
-            <th> Vencimento Mensalidade </th>
-          </tr>
-        </thead>
-        <tbody>
-          <h4>Tabela Cadastro</h4>
-        </tbody>
-      </TabelaCadastro>
-
-      <TabelaCompras>
-        <thead>
-          <tr>
-            <th> Número Registro </th>
-            <th> Nome Membro </th>
-            <th> Produto </th>
-            <th> Valor </th>
-            <th> Qtde </th>
-            <th> Tel. Resposável </th>
-            <th> Nome Responsável </th>
-            <th> Data Compra </th>
-          </tr>
-        </thead>
-        <tbody>
-          <h4>Tabela compras</h4>
-        </tbody>
-
-      </TabelaCompras>
-
-
-
-
-
+      </Table>
 
 
     </>

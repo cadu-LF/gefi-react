@@ -137,38 +137,7 @@ export const Form = styled.form`
   }
 `;
 
-
-export const TabelaVencimentoRegistro = styled.table`
-  margin-top: 50px;
-  th {
-    padding: 20px;
-    border-bottom: 1px solid black;
-  }
-  td {
-    padding: 20px;
-    border-bottom: 1px solid black;
-    button {
-      border:none;
-    }
-  }
-  
-`;
-export const TabelaVencimentoMensalidade = styled.table`
-  margin-top: 50px;
-  th {
-    padding: 20px;
-    border-bottom: 1px solid black;
-  }
-  td {
-    padding: 20px;
-    border-bottom: 1px solid black;
-    button {
-      border:none;
-    }
-  }
-  
-`;
-export const TabelaCadastro = styled.table`
+export const Table = styled.table`
   margin: 50px auto 0px auto;
   th {
     padding: 20px;
@@ -180,21 +149,5 @@ export const TabelaCadastro = styled.table`
     button {
       border:none;
     }
-  }
-  
-`;
-export const TabelaCompras = styled.table`
-  margin-top: 50px;
-  th {
-    padding: 20px;
-    border-bottom: 1px solid black;
-  }
-  td {
-    padding: 20px;
-    border-bottom: 1px solid black;
-    button {
-      border:none;
-    }
-  }
-  
+  } 
 `;

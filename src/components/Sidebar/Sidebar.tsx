@@ -95,9 +95,15 @@ export const Sidebar = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/cadastrar-tipo-produto'>
+                <Link to='/produto'>
                   <BsBagPlus />
-                  <span>Cadastrar Tipo de Produto</span>
+                  <span>Visualizar Produto</span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/tipo-produto'>
+                  <BsBagPlus />
+                  <span>Gerenciar Tipos de Produtos</span>
                 </Link>
               </MenuItem>
               <MenuItem>

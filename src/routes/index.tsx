@@ -6,14 +6,15 @@ import { CadastrarCompra } from '../pages/CadastrarCompra';
 import { CadastrarMembro } from '../pages/CadastrarMembro';
 import { CadastrarProduto } from '../pages/CadastrarProduto';
 import { CadastrarResponsavel } from '../pages/CadastrarResponsavel';
-import { CadastrarTipoProduto } from '../pages/CadastrarTipoProduto';
 import { Nova } from '../pages/Nova';
 import { Sessoes } from '../pages/Sessoes';
 import { Test } from '../pages/Test';
+import { TipoProduto } from '../pages/TipoProduto';
 import { Visualizar } from '../pages/Visualizar';
 import { VisualizarCadastro } from '../pages/VisualizarCadastro';
 import { VisualizarCompra } from '../pages/VisualizarCompra';
 import { VisualizarMensalidades } from '../pages/VisualizarMensalidades';
+import { VisualizarProdutos } from '../pages/VisualizarProdutos';
 import { VisualizarRegistro } from '../pages/VisualizarRegistro';
 
 export const Routes: React.FC = () => {
@@ -25,6 +26,8 @@ export const Routes: React.FC = () => {
         <Route component={Nova} path='/nova' exact />
         <Route component={Sessoes} path='/sessoes' exact />
         <Route component={Visualizar} path='/visualizar' exact />
+        <Route component={TipoProduto} path='/tipo-produto' exact />
+        <Route component={VisualizarProdutos} path='/produto' exact />
         <Route component={CadastrarCompra} path='/cadastrar-compra' exact />
         <Route component={CadastrarMembro} path='/cadastrar-membro' exact />
         <Route component={CadastrarProduto} path='/cadastrar-produto' exact />
@@ -32,7 +35,6 @@ export const Routes: React.FC = () => {
         <Route component={VisualizarCadastro} path='/visualizar-cadastro' exact />
         <Route component={VisualizarRegistro} path='/visualizar-registro' exact />
         <Route component={CadastrarResponsavel} path='/cadastrar-responsavel' exact />
-        <Route component={CadastrarTipoProduto} path='/cadastrar-tipo-produto' exact />
         <Route component={VisualizarMensalidades} path='/visualizar-mensalidades' exact />
       </Switch>
     </>

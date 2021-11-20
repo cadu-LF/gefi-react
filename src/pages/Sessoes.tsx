@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { api } from '../services/api';
-import { Button, Form, TabelaCadastro } from '../styles';
+import { Button, Form, Table } from '../styles';
 
 export const Sessoes: React.FC = () => {
   
@@ -34,7 +34,7 @@ export const Sessoes: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const aux = Object.assign(atual, {
       [e.target.name]: e.target.value
-    })
+    });
   }
 
   const handleSubmit = () => {
@@ -75,7 +75,6 @@ export const Sessoes: React.FC = () => {
   }
 
   const updateSessao = (sessao: ISessao) => {
-
     if (sessao) {
       setAtual(sessao)
     }
@@ -92,7 +91,7 @@ export const Sessoes: React.FC = () => {
         <input type="number" name="qtdeMembros" onChange={handleChange} value={atual.qtdeMembros}/>
         <Button type="submit">Registrar Sessão</Button>
       </Form>
-      <TabelaCadastro>
+      <Table>
       <thead>
         <tr> 
           <th> Nome </th>
@@ -105,7 +104,7 @@ export const Sessoes: React.FC = () => {
         {
           sessoes.map( (sessao, key) => {
             return(
-              <tr>
+              <tr key={key}>
                 <td>{sessao.nome}</td>
                 <td>{sessao.qtdeMembros}</td>
                 <td>  <button onClick={() => deleteSessao(sessao.id)}>  <AiFillDelete/> </button></td>
@@ -115,7 +114,7 @@ export const Sessoes: React.FC = () => {
           })
         }   
       </tbody>
-      </TabelaCadastro>
+      </Table>
     </>
   )
 }
