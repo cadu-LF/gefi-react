@@ -1,10 +1,11 @@
 import React from 'react';
+import { Form } from '../styles';
 
 export const CadastrarResponsavel: React.FC = () => {
   return(
     <>
       <h1>Cadastrar Responsável</h1>
-      <form>
+      <Form>
         <label>Nome do Responsável</label>
         <input type="text" />
         <label>Data de Nascimento</label>
@@ -22,7 +23,7 @@ export const CadastrarResponsavel: React.FC = () => {
         <label>É voluntário?</label>
         <input type="radio" />
         <button type="submit">Cadastrar</button>
-      </form>
+      </Form>
     </>
   )
 }

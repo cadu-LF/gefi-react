@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import {Sidebar} from './components/Sidebar/Sidebar'
+import { Topbar } from './components/Topbar/Topbar';
 import { Routes } from './routes';
 import { GlobalStyle } from './styles/global';
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Sidebar />
+        <Topbar />
         <Routes />
       </BrowserRouter>
       <GlobalStyle />

@@ -6,7 +6,9 @@ import { CadastrarCompra } from '../pages/CadastrarCompra';
 import { CadastrarMembro } from '../pages/CadastrarMembro';
 import { CadastrarProduto } from '../pages/CadastrarProduto';
 import { CadastrarResponsavel } from '../pages/CadastrarResponsavel';
+import { CadastrarTipoProduto } from '../pages/CadastrarTipoProduto';
 import { Nova } from '../pages/Nova';
+import { Sessoes } from '../pages/Sessoes';
 import { Test } from '../pages/Test';
 import { Visualizar } from '../pages/Visualizar';
 import { VisualizarCadastro } from '../pages/VisualizarCadastro';
@@ -21,6 +23,7 @@ export const Routes: React.FC = () => {
       <Switch>
         <Route component={Test} path='/' exact/>
         <Route component={Nova} path='/nova' exact />
+        <Route component={Sessoes} path='/sessoes' exact />
         <Route component={Visualizar} path='/visualizar' exact />
         <Route component={CadastrarCompra} path='/cadastrar-compra' exact />
         <Route component={CadastrarMembro} path='/cadastrar-membro' exact />
@@ -29,6 +32,7 @@ export const Routes: React.FC = () => {
         <Route component={VisualizarCadastro} path='/visualizar-cadastro' exact />
         <Route component={VisualizarRegistro} path='/visualizar-registro' exact />
         <Route component={CadastrarResponsavel} path='/cadastrar-responsavel' exact />
+        <Route component={CadastrarTipoProduto} path='/cadastrar-tipo-produto' exact />
         <Route component={VisualizarMensalidades} path='/visualizar-mensalidades' exact />
       </Switch>
     </>

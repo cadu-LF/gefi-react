@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form } from '../styles';
 
 export const CadastrarCompra: React.FC = () => {
   const [membros, setMembros] = useState([{id: 1, nome: 'Tim'}]);
@@ -7,7 +8,7 @@ export const CadastrarCompra: React.FC = () => {
   return(
     <>
       <h1>Cadastrar Compra</h1>
-      <form>
+      <Form>
         <label>Membro Comprador</label>
         <select placeholder="Selecione um membro">
           {
@@ -27,7 +28,7 @@ export const CadastrarCompra: React.FC = () => {
         <label>Quantidade</label>
         <input type="range" min='1' max='15'/>
         <button type="submit">Registrar Compra</button>
-      </form>
+      </Form>
     </>
   )
 }
