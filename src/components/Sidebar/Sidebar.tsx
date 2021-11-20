@@ -83,6 +83,12 @@ export const Sidebar = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
+                <Link to='/sessoes'>
+                  <BsFillPersonPlusFill />
+                  <span>Gerenciar Sessões</span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
                 <Link to='/cadastrar-produto'>
                   <BsBagPlus />
                   <span>Cadastrar Produto</span>
