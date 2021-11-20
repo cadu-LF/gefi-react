@@ -30,12 +30,12 @@ export const Routes: React.FC = () => {
         <Route component={VisualizarProdutos} path='/produto' exact />
         <Route component={CadastrarCompra} path='/cadastrar-compra' exact />
         <Route component={CadastrarMembro} path='/cadastrar-membro' exact />
-        <Route component={CadastrarProduto} path='/cadastrar-produto' exact />
         <Route component={VisualizarCompra} path='/visualizar-compra' exact />
         <Route component={VisualizarCadastro} path='/visualizar-cadastro' exact />
         <Route component={VisualizarRegistro} path='/visualizar-registro' exact />
         <Route component={CadastrarResponsavel} path='/cadastrar-responsavel' exact />
         <Route component={VisualizarMensalidades} path='/visualizar-mensalidades' exact />
+        <Route component={CadastrarProduto} path={'/cadastrar-produto'} exact />
       </Switch>
     </>
   )

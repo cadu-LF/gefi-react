@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import { api } from '../services/api';
-import { Form } from '../styles';
+import { Button, Form } from '../styles';
 
 export const CadastrarProduto: React.FC = () => {
 
@@ -10,21 +11,33 @@ export const CadastrarProduto: React.FC = () => {
   }
 
   interface IProduto{
+    codProduto?: number;
     descProduto: string;
     valorProduto: number;
     tipoProduto: ITipoProduto;
   }
 
+  const history = useHistory();
   const [tipos, setTipos] = useState<ITipoProduto[]>([]);
   const [produto, setProduto] = useState<IProduto>({} as IProduto);
 
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzczNTk0MzksImV4cCI6MTYzNzQ0NTgzOSwic3ViIjoiMSJ9.xjmltk89dEvuVkGT-nb3Ck-kNoF_bhy8qIP7FY-gR0o'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc0MTIwMzUsImV4cCI6MTYzNzQ5ODQzNSwic3ViIjoiMSJ9.g1zLNxz_djz_zBRkBmaYWBLzz8Wk8o98LpgZ8HxC-8o'
     }
   }
 
   useEffect( () => {
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query)
+    const id = urlParams.get('produto')
+
+    if (id) {
+      api
+        .get(`produto/${id}`, config)  
+        .then(response => setProduto(response.data))
+    }
+
     try {
       api
         .get(`/tipo-produto`, config)
@@ -67,27 +80,40 @@ export const CadastrarProduto: React.FC = () => {
     catch {
       alert('Ocorreu algum problema ao tentar cadastrar o Produto');
     }
+
+    history.push('/produto')
   }
 
   return(
     <>
       <h1>Cadastrar Produto</h1>
       <Form onSubmit={handleSubmit}>
+        <input hidden value={produto.codProduto}/>
         <label>Produto</label>
-        <input type="text" name="descProduto" onChange={handleChange}/><br />
+        <input type="text" name="descProduto" onChange={handleChange} value={produto.descProduto}/><br />
         <label>Valor Unitário</label>
-        <input type="number" name="valorProduto" step=".01" onChange={handleChange}/><br />
+        <input type="number" name="valorProduto" step=".01" onChange={handleChange} value={produto.valorProduto}/><br />
         <label>Tipo de Produto</label>
-        <select placeholder="Selecione o tipo desse produto..." name="tipoProduto" onChange={handleChangeSelect}>
+        <select name="tipoProduto" onChange={handleChangeSelect}>
           {
-            tipos.map( (tipo) => {
+            produto.codProduto && (
+              <option defaultValue={produto.tipoProduto.id}>{produto.tipoProduto.descricao}</option>
+            )
+          }
+          {
+            !produto.codProduto && (
+              <option defaultValue="">Selecione o tipo desse produto</option>
+            )
+          }
+          {
+            tipos.map( (tipo, key) => {
               return(
-                <option value={tipo.id}>{tipo.descricao}</option>
+                <option key={key} value={tipo.id}>{tipo.descricao}</option>
               )
             })
           }
         </select>
-        <button type='submit'>Cadastrar</button>
+        <Button type='submit'>Cadastrar</Button>
       </Form>
     </>
   )
