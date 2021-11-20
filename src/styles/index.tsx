@@ -21,12 +21,11 @@ export const Text = styled.span`
 export const Button = styled.button`
   font-size: 16px;
   color: #fff;
-  width: 80px;
-  height: 45px;
   border: none;
   border-radius: 10px;
   background: #000;
   margin: 10px;
+  padding: 10px;
   
 
   &:hover {
@@ -170,7 +169,7 @@ export const TabelaVencimentoMensalidade = styled.table`
   
 `;
 export const TabelaCadastro = styled.table`
-  margin-top: 50px;
+  margin: 50px auto 0px auto;
   th {
     padding: 20px;
     border-bottom: 1px solid black;

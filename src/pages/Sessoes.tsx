@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { api } from '../services/api';
-import { Form } from '../styles';
+import { Button, Form, TabelaCadastro } from '../styles';
 
 export const Sessoes: React.FC = () => {
   
@@ -16,7 +16,7 @@ export const Sessoes: React.FC = () => {
 
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzczNTk0MzksImV4cCI6MTYzNzQ0NTgzOSwic3ViIjoiMSJ9.xjmltk89dEvuVkGT-nb3Ck-kNoF_bhy8qIP7FY-gR0o'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc0MTIwMzUsImV4cCI6MTYzNzQ5ODQzNSwic3ViIjoiMSJ9.g1zLNxz_djz_zBRkBmaYWBLzz8Wk8o98LpgZ8HxC-8o'
     }
   }
   
@@ -53,8 +53,13 @@ export const Sessoes: React.FC = () => {
     }
     else {
       try {
+        const request = {
+          nome: atual.nome,
+          qtdeMembros: Number(atual.qtdeMembros)
+        }
+
         api
-          .put(`/sessao/${atual.id}`, atual, config)
+          .put(`/sessao/${atual.id}`, request, config)
           .then(response => alert('Sessão atualizada com Sucesso'));
       }
       catch {
@@ -63,9 +68,10 @@ export const Sessoes: React.FC = () => {
     }
   }
 
-  const deleteSessao = (id: any) => {
-
-    console.log(`Oi: ${id}`)
+  const deleteSessao = (id: number | undefined) => {
+    api
+      .delete(`/sessao/${id}`, config)
+      .then( response => alert('Sessão deletada') )
   }
 
   const updateSessao = (sessao: ISessao) => {
@@ -84,9 +90,9 @@ export const Sessoes: React.FC = () => {
         <input type="text" name="nome" onChange={handleChange} value={atual.nome}/>
         <label>Quantidade de Membros</label>
         <input type="number" name="qtdeMembros" onChange={handleChange} value={atual.qtdeMembros}/>
-        <button type="submit">Registrar Sessão</button>
+        <Button type="submit">Registrar Sessão</Button>
       </Form>
-      <table>
+      <TabelaCadastro>
       <thead>
         <tr> 
           <th> Nome </th>
@@ -107,19 +113,9 @@ export const Sessoes: React.FC = () => {
               </tr>
             )
           })
-        }
-        {/* <tr>
-          <td> {product.name} </td>
-          <td> {product.quantity}</td>
-          <td> {product.price}</td>
-          <td>  <button onClick={() => deleteProduct(product.id)}>  <AiFillDelete/> </button></td>
-          <td> <button onClick={() => updateProduct(product)}>  <AiFillEdit/> </button></td>
-        </tr> */}
-      
-
-      
+        }   
       </tbody>
-      </table>
+      </TabelaCadastro>
     </>
   )
 }
