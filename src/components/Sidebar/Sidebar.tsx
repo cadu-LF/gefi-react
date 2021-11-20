@@ -65,55 +65,55 @@ export const Sidebar = () => {
           </SidebarHeader>
           <SidebarContent>
               <MenuItem>
-                <Link to='/'>
+                <Link to='/' onClick={toggleChange}>
                   <RiTestTubeFill/>
                   <span>Teste</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/nova'>
+                <Link to='/nova' onClick={toggleChange}>
                   <MdOutlineFiberNew />
                   <span>Nova</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/cadastrar-membro'>
+                <Link to='/cadastrar-membro' onClick={toggleChange}>
                   <BsFillPersonPlusFill />
                   <span>Cadastrar Membro</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/sessoes'>
+                <Link to='/sessoes' onClick={toggleChange}>
                   <BsFillPersonPlusFill />
                   <span>Gerenciar Sessões</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/cadastrar-produto'>
+                <Link to='/cadastrar-produto' onClick={toggleChange}>
                   <BsBagPlus />
                   <span>Cadastrar Produto</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/produto'>
+                <Link to='/produto' onClick={toggleChange}>
                   <BsBagPlus />
                   <span>Visualizar Produto</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/tipo-produto'>
+                <Link to='/tipo-produto' onClick={toggleChange}>
                   <BsBagPlus />
                   <span>Gerenciar Tipos de Produtos</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/cadastrar-responsavel'>
+                <Link to='/cadastrar-responsavel' onClick={toggleChange}>
                   <BsFillPersonPlusFill />
                   <span>Cadastrar Responsável</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/visualizar-cadastro'>
+                <Link to='/visualizar-cadastro' onClick={toggleChange}>
                   <CgNotes />
                   <span>Visualizar Cadastros</span>
                 </Link>
@@ -126,25 +126,25 @@ export const Sidebar = () => {
                 {activateSubmenu && (
                   <>
                   <MenuItem>
-                    <Link to='/cadastrar-compra'>
+                    <Link to='/cadastrar-compra' onClick={toggleChange}>
                       <BiShoppingBag />
                       <span>Cadastrar Compra</span>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/visualizar-compra'>
+                    <Link to='/visualizar-compra' onClick={toggleChange}>
                       <IoIosCart />
                       <span>Visualizar Compras</span>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/visualizar-registro'>
+                    <Link to='/visualizar-registro' onClick={toggleChange}>
                       <AiFillCalendar />
                       <span>Visualizar Vencimento do Registro</span>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/visualizar-mensalidades'>
+                    <Link to='/visualizar-mensalidades' onClick={toggleChange}>
                       <AiFillFileMarkdown />
                       <span>Vizualizar Vencimento das mensalidades</span>
                     </Link>

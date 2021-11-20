@@ -10,7 +10,7 @@ export const CadastrarProduto: React.FC = () => {
     descricao: string;
   }
 
-  interface IProduto{
+  interface IProduto {
     codProduto?: number;
     descProduto: string;
     valorProduto: number;
@@ -27,26 +27,26 @@ export const CadastrarProduto: React.FC = () => {
     }
   }
 
-  useEffect( () => {
+  useEffect(() => {
     const query = window.location.search;
     const urlParams = new URLSearchParams(query)
     const id = urlParams.get('produto')
 
     if (id) {
       api
-        .get(`produto/${id}`, config)  
+        .get(`produto/${id}`, config)
         .then(response => setProduto(response.data))
     }
 
     try {
       api
         .get(`/tipo-produto`, config)
-        .then( response => setTipos(response.data) );
+        .then(response => setTipos(response.data));
     }
     catch {
       alert('Problema ao consultar os tipos de produtos')
     }
-  }, [])
+  })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     Object.assign(produto, {
@@ -59,7 +59,7 @@ export const CadastrarProduto: React.FC = () => {
     try {
       api
         .get(`/tipo-produto/${e.target.value}`, config)
-        .then( response => {
+        .then(response => {
           Object.assign(produto, {
             [e.target.name]: response.data,
           })
@@ -84,15 +84,15 @@ export const CadastrarProduto: React.FC = () => {
     history.push('/produto')
   }
 
-  return(
+  return (
     <>
       <h1>Cadastrar Produto</h1>
       <Form onSubmit={handleSubmit}>
-        <input hidden value={produto.codProduto}/>
+        <input hidden value={produto.codProduto} />
         <label>Produto</label>
-        <input type="text" name="descProduto" onChange={handleChange} value={produto.descProduto}/><br />
+        <input type="text" name="descProduto" onChange={handleChange} value={produto.descProduto} /><br />
         <label>Valor Unitário</label>
-        <input type="number" name="valorProduto" step=".01" onChange={handleChange} value={produto.valorProduto}/><br />
+        <input type="number" name="valorProduto" step=".01" onChange={handleChange} value={produto.valorProduto} /><br />
         <label>Tipo de Produto</label>
         <select name="tipoProduto" onChange={handleChangeSelect}>
           {
@@ -106,8 +106,8 @@ export const CadastrarProduto: React.FC = () => {
             )
           }
           {
-            tipos.map( (tipo, key) => {
-              return(
+            tipos.map((tipo, key) => {
+              return (
                 <option key={key} value={tipo.id}>{tipo.descricao}</option>
               )
             })
