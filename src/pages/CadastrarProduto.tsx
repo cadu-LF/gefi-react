@@ -23,7 +23,7 @@ export const CadastrarProduto: React.FC = () => {
 
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc0MTIwMzUsImV4cCI6MTYzNzQ5ODQzNSwic3ViIjoiMSJ9.g1zLNxz_djz_zBRkBmaYWBLzz8Wk8o98LpgZ8HxC-8o'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc1MDIyODMsImV4cCI6MTYzNzU4ODY4Mywic3ViIjoiMSJ9.XSqYR7Soqqky3WioOe6xMxr-aCe6n_mavxsill7ydmo'
     }
   }
 
@@ -90,9 +90,9 @@ export const CadastrarProduto: React.FC = () => {
       <Form onSubmit={handleSubmit}>
         <input hidden value={produto.codProduto} />
         <label>Produto</label>
-        <input type="text" name="descProduto" onChange={handleChange} value={produto.descProduto} /><br />
+        <input type="text" name="descProduto" onChange={handleChange} placeholder={produto.descProduto} /><br />
         <label>Valor Unitário</label>
-        <input type="number" name="valorProduto" step=".01" onChange={handleChange} value={produto.valorProduto} /><br />
+        <input type="number" name="valorProduto" step=".01" onChange={handleChange} placeholder={String(produto.valorProduto)} /><br />
         <label>Tipo de Produto</label>
         <select name="tipoProduto" onChange={handleChangeSelect}>
           {

@@ -65,7 +65,7 @@ export const Sidebar = () => {
           </SidebarHeader>
           <SidebarContent>
               <MenuItem>
-                <Link to='/' onClick={toggleChange}>
+                <Link to='/teste' onClick={toggleChange}>
                   <RiTestTubeFill/>
                   <span>Teste</span>
                 </Link>
