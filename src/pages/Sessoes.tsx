@@ -16,7 +16,7 @@ export const Sessoes: React.FC = () => {
 
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc0MTIwMzUsImV4cCI6MTYzNzQ5ODQzNSwic3ViIjoiMSJ9.g1zLNxz_djz_zBRkBmaYWBLzz8Wk8o98LpgZ8HxC-8o'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc1MDIyODMsImV4cCI6MTYzNzU4ODY4Mywic3ViIjoiMSJ9.XSqYR7Soqqky3WioOe6xMxr-aCe6n_mavxsill7ydmo'
     }
   }
   

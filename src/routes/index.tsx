@@ -11,6 +11,7 @@ import { Nova } from '../pages/Nova';
 import { Sessoes } from '../pages/Sessoes';
 import { Test } from '../pages/Test';
 import { TipoProduto } from '../pages/TipoProduto';
+import { Usuarios } from '../pages/Usuarios';
 import { Visualizar } from '../pages/Visualizar';
 import { VisualizarCadastro } from '../pages/VisualizarCadastro';
 import { VisualizarCompra } from '../pages/VisualizarCompra';
@@ -26,6 +27,7 @@ export const Routes: React.FC = () => {
         <Route component={Login} path='/' exact/>
         <Route component={Nova} path='/nova' exact/>
         <Route component={Test} path='/teste' exact/>
+        <Route component={Usuarios} path='/users' exact/>
         <Route component={Sessoes} path='/sessoes' exact />
         <Route component={Visualizar} path='/visualizar' exact />
         <Route component={TipoProduto} path='/tipo-produto' exact />
