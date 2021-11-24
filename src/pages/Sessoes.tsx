@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { api } from '../services/api';
-import { Form } from '../styles';
+import { Button, Form, Table } from '../styles';
 
 export const Sessoes: React.FC = () => {
   
@@ -16,7 +16,7 @@ export const Sessoes: React.FC = () => {
 
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzczNTk0MzksImV4cCI6MTYzNzQ0NTgzOSwic3ViIjoiMSJ9.xjmltk89dEvuVkGT-nb3Ck-kNoF_bhy8qIP7FY-gR0o'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc1MDIyODMsImV4cCI6MTYzNzU4ODY4Mywic3ViIjoiMSJ9.XSqYR7Soqqky3WioOe6xMxr-aCe6n_mavxsill7ydmo'
     }
   }
   
@@ -34,7 +34,7 @@ export const Sessoes: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const aux = Object.assign(atual, {
       [e.target.name]: e.target.value
-    })
+    });
   }
 
   const handleSubmit = () => {
@@ -53,8 +53,13 @@ export const Sessoes: React.FC = () => {
     }
     else {
       try {
+        const request = {
+          nome: atual.nome,
+          qtdeMembros: Number(atual.qtdeMembros)
+        }
+
         api
-          .put(`/sessao/${atual.id}`, atual, config)
+          .put(`/sessao/${atual.id}`, request, config)
           .then(response => alert('Sessão atualizada com Sucesso'));
       }
       catch {
@@ -63,13 +68,13 @@ export const Sessoes: React.FC = () => {
     }
   }
 
-  const deleteSessao = (id: any) => {
-
-    console.log(`Oi: ${id}`)
+  const deleteSessao = (id: number | undefined) => {
+    api
+      .delete(`/sessao/${id}`, config)
+      .then( response => alert('Sessão deletada') )
   }
 
   const updateSessao = (sessao: ISessao) => {
-
     if (sessao) {
       setAtual(sessao)
     }
@@ -84,9 +89,9 @@ export const Sessoes: React.FC = () => {
         <input type="text" name="nome" onChange={handleChange} value={atual.nome}/>
         <label>Quantidade de Membros</label>
         <input type="number" name="qtdeMembros" onChange={handleChange} value={atual.qtdeMembros}/>
-        <button type="submit">Registrar Sessão</button>
+        <Button type="submit">Registrar Sessão</Button>
       </Form>
-      <table>
+      <Table>
       <thead>
         <tr> 
           <th> Nome </th>
@@ -99,7 +104,7 @@ export const Sessoes: React.FC = () => {
         {
           sessoes.map( (sessao, key) => {
             return(
-              <tr>
+              <tr key={key}>
                 <td>{sessao.nome}</td>
                 <td>{sessao.qtdeMembros}</td>
                 <td>  <button onClick={() => deleteSessao(sessao.id)}>  <AiFillDelete/> </button></td>
@@ -107,19 +112,9 @@ export const Sessoes: React.FC = () => {
               </tr>
             )
           })
-        }
-        {/* <tr>
-          <td> {product.name} </td>
-          <td> {product.quantity}</td>
-          <td> {product.price}</td>
-          <td>  <button onClick={() => deleteProduct(product.id)}>  <AiFillDelete/> </button></td>
-          <td> <button onClick={() => updateProduct(product)}>  <AiFillEdit/> </button></td>
-        </tr> */}
-      
-
-      
+        }   
       </tbody>
-      </table>
+      </Table>
     </>
   )
 }

@@ -21,12 +21,11 @@ export const Text = styled.span`
 export const Button = styled.button`
   font-size: 16px;
   color: #fff;
-  width: 80px;
-  height: 45px;
   border: none;
   border-radius: 10px;
   background: #000;
   margin: 10px;
+  padding: 10px;
   
 
   &:hover {
@@ -75,9 +74,11 @@ export const Button3 = styled.button`
 `;
 
 export const NavBarArea = styled.div`
-  
+  display: flex;
+
   nav{
     background: #000 !important;
+    width: 100% !important;
   };
   .inicio{
     color: #FFEA34 !important;
@@ -136,9 +137,8 @@ export const Form = styled.form`
   }
 `;
 
-
-export const TabelaVencimentoRegistro = styled.table`
-  margin-top: 50px;
+export const Table = styled.table`
+  margin: 50px auto 0px auto;
   th {
     padding: 20px;
     border-bottom: 1px solid black;
@@ -149,51 +149,5 @@ export const TabelaVencimentoRegistro = styled.table`
     button {
       border:none;
     }
-  }
-  
-`;
-export const TabelaVencimentoMensalidade = styled.table`
-  margin-top: 50px;
-  th {
-    padding: 20px;
-    border-bottom: 1px solid black;
-  }
-  td {
-    padding: 20px;
-    border-bottom: 1px solid black;
-    button {
-      border:none;
-    }
-  }
-  
-`;
-export const TabelaCadastro = styled.table`
-  margin-top: 50px;
-  th {
-    padding: 20px;
-    border-bottom: 1px solid black;
-  }
-  td {
-    padding: 20px;
-    border-bottom: 1px solid black;
-    button {
-      border:none;
-    }
-  }
-  
-`;
-export const TabelaCompras = styled.table`
-  margin-top: 50px;
-  th {
-    padding: 20px;
-    border-bottom: 1px solid black;
-  }
-  td {
-    padding: 20px;
-    border-bottom: 1px solid black;
-    button {
-      border:none;
-    }
-  }
-  
+  } 
 `;
