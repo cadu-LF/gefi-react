@@ -1,16 +1,14 @@
 import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, SubMenu, MenuItem } from 'react-pro-sidebar';
 
-import { RiTestTubeFill } from 'react-icons/ri';
 import {GoThreeBars} from 'react-icons/go';
-import { BsBagPlus, BsCurrencyDollar, BsFillPersonPlusFill } from 'react-icons/bs';
-import {CgNotes} from 'react-icons/cg';
-import { IoIosCart } from 'react-icons/io';
-import { BiShoppingBag, BiGitRepoForked } from 'react-icons/bi';
+import { BsBagPlus, BsCurrencyDollar } from 'react-icons/bs';
+import { BiGitRepoForked, BiShoppingBag } from 'react-icons/bi';
 import { GiBarracksTent, GiFleurDeLys } from 'react-icons/gi';
 import { SiWolframlanguage } from 'react-icons/si';
-import { MdVolunteerActivism, MdOutlineFiberNew } from 'react-icons/md';
 import { TiArrowBackOutline } from 'react-icons/ti';
-import { AiFillCalendar, AiFillFileMarkdown, AiOutlineCompass } from 'react-icons/ai';
+import { AiOutlineCompass, AiOutlineUser } from 'react-icons/ai';
+import { HiOutlineUserGroup } from 'react-icons/hi';
+import { GrConfigure } from 'react-icons/gr';
 
 import {Link, useHistory} from 'react-router-dom'
 import { useEffect, useState } from 'react';
@@ -55,7 +53,6 @@ export const Sidebar = () => {
   }
 
   return(
-    // colocar verificação de showSidebar
     <ProSidebar>
       <GoThreeBars size='30px' onClick={toggleChange}/>
       {toggle && !sessaoSidebar &&(
@@ -65,57 +62,21 @@ export const Sidebar = () => {
           </SidebarHeader>
           <SidebarContent>
               <MenuItem>
-                <Link to='/teste' onClick={toggleChange}>
-                  <RiTestTubeFill/>
-                  <span>Teste</span>
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to='/nova' onClick={toggleChange}>
-                  <MdOutlineFiberNew />
-                  <span>Nova</span>
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to='/cadastrar-membro' onClick={toggleChange}>
-                  <BsFillPersonPlusFill />
-                  <span>Cadastrar Membro</span>
+                <Link to='/usuarios' onClick={toggleChange}>
+                  <AiOutlineUser />
+                  <span>Gerenciar Usuários</span>
                 </Link>
               </MenuItem>
               <MenuItem>
                 <Link to='/sessoes' onClick={toggleChange}>
-                  <BsFillPersonPlusFill />
+                  <HiOutlineUserGroup />
                   <span>Gerenciar Sessões</span>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/cadastrar-produto' onClick={toggleChange}>
-                  <BsBagPlus />
-                  <span>Cadastrar Produto</span>
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to='/produto' onClick={toggleChange}>
-                  <BsBagPlus />
-                  <span>Visualizar Produto</span>
-                </Link>
-              </MenuItem>
-              <MenuItem>
                 <Link to='/tipo-produto' onClick={toggleChange}>
-                  <BsBagPlus />
+                  <GrConfigure />
                   <span>Gerenciar Tipos de Produtos</span>
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to='/cadastrar-responsavel' onClick={toggleChange}>
-                  <BsFillPersonPlusFill />
-                  <span>Cadastrar Responsável</span>
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to='/visualizar-cadastro' onClick={toggleChange}>
-                  <CgNotes />
-                  <span>Visualizar Cadastros</span>
                 </Link>
               </MenuItem>
               <SubMenu 
@@ -126,27 +87,15 @@ export const Sidebar = () => {
                 {activateSubmenu && (
                   <>
                   <MenuItem>
-                    <Link to='/cadastrar-compra' onClick={toggleChange}>
+                    <Link to='/cadastrar-produto' onClick={toggleChange}>
+                      <BsBagPlus />
+                      <span>Cadastrar Produto</span>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/produto' onClick={toggleChange}>
                       <BiShoppingBag />
-                      <span>Cadastrar Compra</span>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to='/visualizar-compra' onClick={toggleChange}>
-                      <IoIosCart />
-                      <span>Visualizar Compras</span>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to='/visualizar-registro' onClick={toggleChange}>
-                      <AiFillCalendar />
-                      <span>Visualizar Vencimento do Registro</span>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to='/visualizar-mensalidades' onClick={toggleChange}>
-                      <AiFillFileMarkdown />
-                      <span>Vizualizar Vencimento das mensalidades</span>
+                      <span>Visualizar Produto</span>
                     </Link>
                   </MenuItem>
                   </>

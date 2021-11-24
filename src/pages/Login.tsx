@@ -24,7 +24,7 @@ export const Login: React.FC = () => {
       .post('/users/check', login)
       .then(response => {
         if (response.data === 'OK') {
-          history.push('/teste');
+          history.push('/usuarios');
         }
         else {
           alert(response.data);          

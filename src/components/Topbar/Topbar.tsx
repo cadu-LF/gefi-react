@@ -5,7 +5,6 @@ import { DropFull, NavBarArea } from '../../styles';
 import Navbar from "react-bootstrap/Navbar";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 
-// icons
 import { BiHomeCircle, BiUserCircle } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { AiOutlineUserSwitch } from "react-icons/ai";
