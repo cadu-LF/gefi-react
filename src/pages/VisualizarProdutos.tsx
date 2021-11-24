@@ -7,7 +7,7 @@ import { Table } from '../styles';
 export const VisualizarProdutos: React.FC = () => {
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc2Mjk5MTksImV4cCI6MTYzNzcxNjMxOSwic3ViIjoiMSJ9.6WHVALyR47sAKGFpvcJZ8oC7a1dfUgO7ov0mRCo2j2c'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc2OTk2NzgsImV4cCI6MTYzNzc4NjA3OCwic3ViIjoiMSJ9.ItsRwHxZfCA_6HiCB0zy4vfIED6pQzCIjPuc2mh1T2I'
     }
   }
 

@@ -23,7 +23,7 @@ export const CadastrarProduto: React.FC = () => {
 
   let config = {
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc2Mjk5MTksImV4cCI6MTYzNzcxNjMxOSwic3ViIjoiMSJ9.6WHVALyR47sAKGFpvcJZ8oC7a1dfUgO7ov0mRCo2j2c'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc2OTk2NzgsImV4cCI6MTYzNzc4NjA3OCwic3ViIjoiMSJ9.ItsRwHxZfCA_6HiCB0zy4vfIED6pQzCIjPuc2mh1T2I'
     }
   }
 
@@ -35,7 +35,7 @@ export const CadastrarProduto: React.FC = () => {
     if (id) {
       try {
         api
-          .get(`produto/${id}`, config)
+          .get<IProduto>(`produto/${id}`, config)
           .then(response => setProduto(response.data))
       }
       catch {
@@ -45,20 +45,23 @@ export const CadastrarProduto: React.FC = () => {
 
     try {
       api
-        .get(`/tipo-produto`, config)
+        .get<ITipoProduto[]>(`/tipo-produto`, config)
         .then(response => setTipos(response.data));
     }
     catch {
       alert('Problema ao consultar os tipos de produtos')
     }
-  })
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(produto)
     const aux = Object.assign(produto, {
       [e.target.name]: e.target.value,
     });
 
-    setProduto(aux)
+    console.log(aux);
+    setProduto(aux);
+    console.log(produto)
   }
 
   const handleChangeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -106,7 +109,7 @@ export const CadastrarProduto: React.FC = () => {
       try {
         api
           .put(`/produto/${produto.codProduto}`, request, config)
-          .then(response => alert('Produto cadastrado com sucesso'))
+          .then(response => alert('Produto atualizado com sucesso'))
           
           history.push('/produto')
       }
@@ -122,9 +125,9 @@ export const CadastrarProduto: React.FC = () => {
       <Form onSubmit={handleSubmit}>
         <input hidden value={produto.codProduto} />
         <label>Produto</label>
-        <input type="text" name="descProduto" onChange={handleChange} value={produto.descProduto} /><br />
+        <input type="text" name="descProduto" defaultValue={produto.descProduto} onChange={handleChange} /><br />
         <label>Valor Unitário</label>
-        <input type="number" name="valorProduto" step=".01" onChange={handleChange} value={produto.valorProduto} /><br />
+        <input type="number" name="valorProduto" step=".01" onChange={handleChange} defaultValue={produto.valorProduto} /><br />
         <label>Tipo de Produto</label>
         <select name="tipoProduto" onChange={handleChangeSelect}>
           {
